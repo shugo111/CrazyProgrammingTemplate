@@ -6,10 +6,37 @@
    <meta http-equiv="x-ua-compatible" content="ie=edge">
 
    <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+   <link rel="stylesheet" href="/css/styles.css">
     <title></title>
   </head>
   <body>
+    <nav class="navbar navbar-dark navbar-expand-sm fixed-top bg-dark">
+        <div class="container">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+           <a class="navbar-brand" href="#">Crazy</a>
+           <div class="collapse navbar-collapse nav-pos" id="Navbar">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active"><a class="nav-link" href="#">Leaderboard</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"> Events</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"> Rules</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">CLock</a></li>
+                <li class="nav-item dropdown nav-element-left"><a class="nav-link drop-down-toggle" href="#" id="navbardrop" data-toggle="dropdown"><span class="fa fa-user"></span> Username</a>
+                  <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">.</a>
+                          <a class="dropdown-item" href="#">.</a>
+                          <a class="dropdown-item" href="#">.</a>
+                        </div>
+                </li>
+                </ul>
+              </div>
+        </div>
+    </nav>
+
 
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
        <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
