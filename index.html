@@ -1,45 +1,89 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-   <!-- Bootstrap CSS -->
-   <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
-   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-   <link rel="stylesheet" href="/css/styles.css">
-    <title></title>
-  </head>
-  <body>
-    <nav class="navbar navbar-dark navbar-expand-sm fixed-top bg-dark">
-        <div class="container">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-           <a class="navbar-brand" href="#">Crazy</a>
-           <div class="collapse navbar-collapse nav-pos" id="Navbar">
-                <ul class="navbar-nav mr-auto">
-                  <li class="nav-item active"><a class="nav-link" href="#">Leaderboard</a></li>
-                <li class="nav-item"><a class="nav-link" href="#"> Events</a></li>
-                <li class="nav-item"><a class="nav-link" href="#"> Rules</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">CLock</a></li>
-                <li class="nav-item dropdown nav-element-left"><a class="nav-link drop-down-toggle" href="#" id="navbardrop" data-toggle="dropdown"><span class="fa fa-user"></span> Username</a>
-                  <div class="dropdown-menu">
-                          <a class="dropdown-item" href="#">.</a>
-                          <a class="dropdown-item" href="#">.</a>
-                          <a class="dropdown-item" href="#">.</a>
-                        </div>
-                </li>
-                </ul>
-              </div>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/community.css">
+  <link rel="stylesheet" href="/css/dashbord.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <title></title>
+</head>
+
+<body>
+  <nav class="navbar navbar-dark navbar-expand-sm fixed-top bg-dark">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#">Crazy</a>
+      <div class="collapse navbar-collapse nav-pos" id="Navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active"><a class="nav-link" href="#">Leaderboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="#"> Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="#"> Rules</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">CLock</a></li>
+          <li class="nav-item dropdown nav-element-left"><a class="nav-link drop-down-toggle" href="#" id="navbardrop" data-toggle="dropdown"><span class="fa fa-user"></span> Username</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">.</a>
+              <a class="dropdown-item" href="#">.</a>
+              <a class="dropdown-item" href="#">.</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="jumbotron">
+    <div class="container">
+      <div class="row row-header">
+        <div class="col-12 col-sm-6">
+          <h1>Dashbord</h1>
         </div>
-    </nav>
+        <div class="col-12 col-sm">
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <div class="community-content">
+    <div class="container dashboard-page dashboard-v2">
+      <div class="my-tracks">
+        <div class="v2-section-header">
+          <h2 class="text-para-headline bold">Your Skills</h2>
+        </div>
+        <div class="tracks-row">
+          <div class="interview-promotion-card card-box">
+            <div class="interview-banner"><img class="new-banner-svg" alt="New" src="https://hrcdn.net/fcore/assets/svgs/new-banner-341e41b06d.svg" /></div>
+            <div class="base-card">
+              <div class="ui-card ui-layer-2 active-card">
+                <h2 class="ui-title text-sec-headline-xs">Interview Preparation</h2>
+                <div class="card-content">
+                  <h3 class="base-card-title" title="Interview Preparation Kit" id="base-card-1">Interview Preparation Kit</h3>
+                  <div class="base-card-detail text-content">Curated challenges and tips based on learnings from 1000+ companies to help you prepare for your upcoming interviews.</div><a
+                    class="ui-btn ui-btn-normal ui-btn-large ui-btn-primary ui-btn-link" tabindex="0" aria-labelledby="base-card-1 base-card-1-link" data-analytics="InterviewPromotionCard" data-attr8="0" id="base-card-1-link"
+                    href="interview/interview-preparation-kit.html">
+                    <div class="ui-content align-icon-right"><span class="ui-text">View</span></div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+  <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
 
-    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
-       <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
-       <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-  </body>
 </html>
