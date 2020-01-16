@@ -6,10 +6,53 @@ right: 0;
 .nav-pos{
   position: relative;
 }
-
 .jumbotron{
   padding: 70px 30px 70px 30px;
   margin: 0px auto;
   background: floralwhite;
   color: black;
+}
+.contain{
+
+  margin: 0px;
+}
+div.card {
+
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+#contain-card{
+  padding: 70px 30px 70px 30px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+#contain-row{
+
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.footer{
+  margin: 0px auto;
+  padding: 20px 0px 20px 0px;
+}
+.address{
+  font-size: 80%;
+  margin: 0px;
+  color: #0f0f0f
+}
+.text-sec-headline-xs, .text-sub-headline {
+  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-family-text)
+}
+
+.text-sec-headline-xs {
+  letter-spacing: .6px;
+  font-size: 12px
+}
+
+.text-sec-headline-s, .text-sec-headline-xs {
+  color: #738f93;
+  text-transform: uppercase;
+  line-height: 1.4;
+  font-weight: 400
 }
