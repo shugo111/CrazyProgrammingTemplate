@@ -17,12 +17,12 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-dark navbar-expand-sm fixed-top bg-dark">
+  <nav class="navbar navbar-dark navbar-expand-sm fixed-top" style="background:#232f34">
     <div class="container">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="#">Crazy</a>
+      <a class="navbar-brand" href="#" style="color:#f9AA33">Crazy</a>
       <div class="collapse navbar-collapse nav-pos" id="Navbar">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active"><a class="nav-link" href="#">Leaderboard</a></li>
@@ -53,60 +53,88 @@
     </div>
   </header>
 
-  <div class="bg-secondary">
+  <div  style="background:#F3F7F7">
     <div class="row" id="contain-card">
       <div class="col-md-6">
         <div class="card " style="margin:20px 15px 20px 15px">
-          <div class="card-header bg-white">
-            Featured
+          <div class="card-header text-right" style="background:#f9AA33;color:#fff">
+          <b>New</b>
           </div>
           <div class="card-body">
             <h2 class="ui-title text-sec-headline-xs">INTERVIEW PREPARATION</h2>
-            <h3 class="base-card-title" title="Interview Preparation Kit" id="base-card-1">Interview Preparation Kit</h3>
+            <h3 class="base-card-title" title="Interview Preparation Kit" id="base-card-1" style="color:#000000">Interview Preparation Kit</h3>
 
             <div class="progress" style="height:5px">
-              <div class="progress-bar" role="progressbar" style="width: 25%;height:5px" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar" role="progressbar" style="width: 4%;height:5px;background:#000000" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
 
             <h2 class="ui-title text-sec-headline-xs" style="padding:25px 5px 20px 5px"><b style="color:#000000">4%</b>(3/69 challenges solved)</h2>
              <div class="row">
               <div class="col-sm-6">
-                <a href="#" class="btn btn-primary btn-block">Continue Practice</a>
+                <a href="#" class="btn btn-primary btn-block border-0" style="background:#f9AA33"><b>Continue Practice</b></a>
                </div>
             </div>
           </div>
-          <div class="card-footer text-muted">
+          <div class="card-footer text-muted text-center">
             2 days ago
           </div>
         </div>
       </div>
       <div class="col-md-6">
-        <div class="card " style="margin:25px 15px 20px 15px">
-          <div class="card-header bg-white">
-            Featured
+        <div class="card " style="margin:20px 15px 20px 15px">
+          <div class="card-header text-right" style="background:#FFAB91;color:#232F34">
+          <b>Featured</b>
           </div>
           <div class="card-body">
             <h2 class="ui-title text-sec-headline-xs">INTERVIEW PREPARATION</h2>
-            <h3 class="base-card-title" title="Interview Preparation Kit" id="base-card-1">Interview Preparation Kit</h3>
+            <h3 class="base-card-title" title="Interview Preparation Kit" id="base-card-1" style="color:#000000">Interview Preparation Kit</h3>
 
             <div class="progress" style="height:5px">
-              <div class="progress-bar" role="progressbar" style="width: 25%;height:5px" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar" role="progressbar" style="width: 4%;height:5px;background:#000000" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
 
             <h2 class="ui-title text-sec-headline-xs" style="padding:25px 5px 20px 5px"><b style="color:#000000">4%</b>(3/69 challenges solved)</h2>
              <div class="row">
               <div class="col-sm-6">
-                <a href="#" class="btn btn-primary btn-block">Continue Practice</a>
+                <a href="#" class="btn btn-block" style="border-color:#f9AA33;color:#f9AA33"><b>Continue Practice</b></a>
                </div>
             </div>
           </div>
-          <div class="card-footer text-muted">
+          <div class="card-footer text-muted text-center">
             2 days ago
           </div>
         </div>
       </div>
     </div>
-  </div>
+    <div class="row" id="contain-cards">
+      <div class="col-md-6">
+        <div class="card " style="margin:20px 15px 20px 15px">
+          <div class="card-header text-right" style="background:#F3F7F7;color:#232F34">
+          <b>Disabled</b>
+          </div>
+          <div class="card-body">
+            <h2 class="ui-title text-sec-headline-xs">INTERVIEW PREPARATION</h2>
+            <h3 class="base-card-title" title="Interview Preparation Kit" id="base-card-1" style="color:#000000">Interview Preparation Kit</h3>
+
+            <div class="progress" style="height:5px">
+              <div class="progress-bar" role="progressbar" style="width: 4%;height:5px;background:#000000" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+
+            <h2 class="ui-title text-sec-headline-xs" style="padding:25px 5px 20px 5px"><b style="color:#000000">4%</b>(3/69 challenges solved)</h2>
+             <div class="row">
+              <div class="col-sm-6">
+                <a href="#" class="btn btn-block disabled" style="border-color:#f9AA33;color:#f9AA33" ><b>Continue Practice</b></a>
+               </div>
+            </div>
+          </div>
+          <div class="card-footer text-muted text-center">
+            2 days ago
+          </div>
+        </div>
+      </div>
+    </div>
+  </div
+
 
   <footer class="footer">
     <div class="container">
@@ -116,20 +144,19 @@
           <ul class="list-unstyled">
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
-            <li><a href="#">Menu</a></li>
             <li><a href="#">Contact</a></li>
           </ul>
         </div>
         <div class="col-7 col-sm-5">
           <h5>Our Address</h5>
           <address>
-            121, Clear Water Bay Road<br>
-            Clear Water Bay, Kowloon<br>
-            HONG KONG<br>
-            <i class="fa fa-phone fa-lg"></i>: +852 1234 5678<br>
-            <i class="fa fa-fax fa-lg"></i>: +852 8765 4321<br>
+            Kens Residency,B-102<br>
+            1st Main,16th Cross,Pai Layout<br>
+            Bangalore-560016<br>
+            <i class="fa fa-phone fa-lg"></i>: +91 8867525797<br>
+            <i class="fa fa-fax fa-lg"></i>: <br>
             <i class="fa fa-envelope fa-lg"></i>:
-            <a href="mailto:confusion@food.net">confusion@food.net</a>
+            <a href="mailto:shubshubham1@gmail.com">shubshubham1@gmail.com</a>
 
           </address>
         </div>
@@ -146,7 +173,7 @@
       </div>
       <div class="row justify-content-center">
         <div class="col-auto">
-          <p>© Copyright 2018 Ristorante Con Fusion</p>
+          <p>© Copyright </p>
         </div>
       </div>
     </div>
