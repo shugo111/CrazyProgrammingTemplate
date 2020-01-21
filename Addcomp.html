@@ -6,12 +6,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <link rel="stylesheet" type="text/css" href="file:///home/shru/Downloads/bootstrap-4.3.1-dist/css/bootstrap.min.css">
-  <script type="text/javascript" src="file:///home/shru/Downloads/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
-  
+  <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="Dashboard.css">
+  <link rel="stylesheet" href="/css/Dashboard.css">
   <script type="text/javascript">
         function preventBack() { window.history.forward(); }
         setTimeout("preventBack()", 0);
@@ -31,7 +32,7 @@
         <a onClick="logout()" id="log" href="Login.html" class="navbar-brand pull-right" style="color:#F0F0F0"  >Logout</a>
     </li>
     </div>
-  </nav>  
+  </nav>
 
 
   <div class="sidenav">
@@ -54,18 +55,18 @@
           <div class="card-body">
             <h4 class="ui-title text-sec-headline-xs">Add new competition</h4>
             <form>
-              <div class="form-group row"> 
-              <label for="event name" class="col-sm-2 col-form-label">Event name:</label>                      
+              <div class="form-group row">
+              <label for="event name" class="col-sm-2 col-form-label">Event name:</label>
               <input type="text" id="var" required>
               </div>
 
-              <div class="form-group row"> 
-                <label for="start-date" class="col-sm-2 col-form-label">Start Date:</label>                      
+              <div class="form-group row">
+                <label for="start-date" class="col-sm-2 col-form-label">Start Date:</label>
                 <input type="date" required>
               </div>
 
-              <div class="form-group row"> 
-                <label for="n0-of-days" class="col-sm-2 col-form-label">No of days:</label>                      
+              <div class="form-group row">
+                <label for="n0-of-days" class="col-sm-2 col-form-label">No of days:</label>
                 <input type="input" required>
               </div>
 
@@ -109,10 +110,10 @@
             <h7>Add questions below:</h7><br>
             <div class="form-group">
               <textarea id="text-arr" class="form-control rounded-0" id="exampleFormControlTextarea1" rows="5"  required>
-              Sample Question  
+              Sample Question
 
               Write a code to add two numbers
-            
+
             </textarea>
             </div>
 
@@ -148,7 +149,7 @@
             <div class="form-group">
               <textarea id="text-arr" class="form-control rounded-0" id="exampleFormControlTextarea1" rows="5" required>
                 Sample Input:
-                3 
+                3
                 1 2
                 100 200
                 10 40
@@ -173,5 +174,8 @@
     </div>
 
 </div>
+<script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+<script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
