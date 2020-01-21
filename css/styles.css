@@ -68,3 +68,7 @@ div.card {
     border-bottom: 1px solid #ddd;
     padding: 10px;
 }
+#text_compiler{
+  position: relative;
+  border: 5px solid #1C2434;
+}
