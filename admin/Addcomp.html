@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="file:///home/shru/Downloads/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+  <script type="text/javascript" src="file:///home/shru/Downloads/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+  
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="Dashboard.css">
+  <script type="text/javascript">
+        function preventBack() { window.history.forward(); }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
+    </script>
+  <title>Add Competition</title>
+</head>
+<body>
+
+	<nav class="navbar navbar-dark navbar-expand-sm fixed-top" style="background:#232f34">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#" style="color:#ffa852">Crazy Programming <br><h3 >Admin</h3> </a>
+      <li>
+        <a onClick="logout()" id="log" href="Login.html" class="navbar-brand pull-right" style="color:#F0F0F0"  >Logout</a>
+    </li>
+    </div>
+  </nav>  
+
+
+  <div class="sidenav">
+    <br><br>
+  <a href="Dashboard.html" >Leaderboard</a><br>
+  <a href="Event.html">Upcoming events</a><br>
+  <a href="Addcomp.html" id="hell">Add Competition</a><br>
+  <a href="weitage.html" active >Change weightage</a><br>
+  <a href="Wei.html">Current weightage</a><br>
+</div>
+<br>
+<br>
+<div class="main">
+    <div class="row" id="contain-card">
+      <div class="col-md-8">
+        <div class="card " style="margin:20px 15px 20px 15px">
+          <div class="card-header text-right" style="background:#ffa852;">
+          <b>New competition</b>
+          </div>
+          <div class="card-body">
+            <h4 class="ui-title text-sec-headline-xs">Add new competition</h4>
+            <form>
+              <div class="form-group row"> 
+              <label for="event name" class="col-sm-2 col-form-label">Event name:</label>                      
+              <input type="text" id="var" required>
+              </div>
+
+              <div class="form-group row"> 
+                <label for="start-date" class="col-sm-2 col-form-label">Start Date:</label>                      
+                <input type="date" required>
+              </div>
+
+              <div class="form-group row"> 
+                <label for="n0-of-days" class="col-sm-2 col-form-label">No of days:</label>                      
+                <input type="input" required>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Submit</button>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br><br>
+
+    <div class="row" id="contain-card">
+      <div class="col-md-8">
+        <div class="card " style="margin:20px 15px 20px 15px">
+          <div class="card-header text-right" style="background:#ffa852;">
+          <b>Upcoming events</b>
+          </div>
+          <div class="card-body">
+            <h4 class="ui-title text-sec-headline-xs">Add questions for upcoming Competitions</h4>
+            <br>
+            <h7>Select event:</h7><br><br>
+            <div class="custom-control custom-radio">
+              <input type="radio" class="custom-control-input" id="defaultGroupExample1" name="groupOfDefaultRadios" >
+              <label class="custom-control-label" for="defaultGroupExample1">Event1</label>
+            </div>
+
+            <!-- Group of default radios - option 2 -->
+            <div class="custom-control custom-radio">
+              <input type="radio" class="custom-control-input" id="defaultGroupExample2" name="groupOfDefaultRadios">
+              <label class="custom-control-label" for="defaultGroupExample2">Event2</label>
+            </div>
+
+            <!-- Group of default radios - option 3 -->
+            <div class="custom-control custom-radio">
+              <input type="radio" class="custom-control-input" id="defaultGroupExample3" name="groupOfDefaultRadios">
+              <label class="custom-control-label" for="defaultGroupExample3">Event3</label>
+            </div>
+            <br>
+
+            <h7>Add questions below:</h7><br>
+            <div class="form-group">
+              <textarea id="text-arr" class="form-control rounded-0" id="exampleFormControlTextarea1" rows="5"  required>
+              Sample Question  
+
+              Write a code to add two numbers
+            
+            </textarea>
+            </div>
+
+            <h7>Add input for question</h7>
+            <div class="form-group">
+              <textarea id="text-arr" class="form-control rounded-0" id="exampleFormControlTextarea1" rows="5" required>
+                Input:
+                The first line contains an integer T, total number of test cases.
+                Then follow T lines, each line contains two Integers A and B.
+
+              </textarea>
+            </div>
+
+            <h7>Add output:</h7>
+            <div class="form-group">
+              <textarea id="text-arr" class="form-control rounded-0" id="exampleFormControlTextarea1" rows="5" required>
+                Output:
+                Add A and B and display it.
+              </textarea>
+            </div>
+
+            <h7>Add constraints:</h7>
+            <div class="form-group">
+              <textarea id="text-arr" class="form-control rounded-0" id="exampleFormControlTextarea1" rows="5" required>
+                Constraints
+                *1 ≤ T ≤ 1000
+                *1 ≤ A,B ≤ 10000
+
+              </textarea>
+            </div>
+
+            <h7>Add sample input:</h7>
+            <div class="form-group">
+              <textarea id="text-arr" class="form-control rounded-0" id="exampleFormControlTextarea1" rows="5" required>
+                Sample Input:
+                3 
+                1 2
+                100 200
+                10 40
+
+              </textarea>
+            </div>
+
+            <h7>Add sample output:</h7>
+            <div class="form-group">
+              <textarea id="text-arr" class="form-control rounded-0" id="exampleFormControlTextarea1" rows="5" required>
+                Sample Output:
+                3
+                300
+                50
+
+              </textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</div>
+</body>
+</html>
