@@ -1,3 +1,11 @@
+
+<?php 
+
+	session_start();
+	include 'connection.php';
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -51,67 +59,157 @@
 	<form >
 		<div class="form-group row">
 	    	<label for="underscore" class="col-sm-2 col-form-label">Underscore</label>
-	    	<input type="number" id="replyNumber" data-bind="value:replyNumber" placeholder="10" min="0" >
+	    	<input type="number" id="replyNumber" data-bind="value:replyNumber" placeholder="10" min="0" value="10" >
 	  	</div>
 
 	  	<div class="form-group row">
 	  		<label for="dollar" class="col-sm-2 col-form-label">Dollar</label>
-	    	<input type="number" id="replyNumber" data-bind="value:replyNumber" placeholder="10" min="0">
+	    	<input type="number" id="replyNumber" data-bind="value:replyNumber" placeholder="10" min="0" value="10">
 		</div>
 
 		<div class="form-group row">
 	  		<label for="digits" class="col-sm-2 col-form-label">Digits</label>
-	    	<input type="number" id="replyNumber" data-bind="value:replyNumber" placeholder="100" min="0">
+	    	<input type="number" id="replyNumber" data-bind="value:replyNumber" placeholder="100" min="0" value="100">
 		</div>
 
 		<div class="form-group row">
 	  		<label for="arithmatic-operator" class="col-sm-2 col-form-label">Arithmatic Operators</label>
-	    	<input type="number" id="replyNumber" data-bind="value:replyNumber" placeholder="1000" min="0">
+	    	<input type="number" id="replyNumber" data-bind="value:replyNumber" placeholder="1000" min="0" value="1000">
 		</div>
 
 		<div class="form-group row">
 	  		<label for="relational-operator" class="col-sm-2 col-form-label">Relational Operator</label><br>
-	    	<input type="number" id="replyNumber" data-bind="value:replyNumber" placeholder="50" min="0">
+	    	<input type="number" id="replyNumber" data-bind="value:replyNumber" placeholder="50" min="0" value="50">
 		</div>
 
 		<div class="form-group row">
 	  		<label for="bitwise-operator" class="col-sm-2 col-form-label">Bitwise Operator</label>
-	    	<input type="number" id="replyNumber" data-bind="value:replyNumber" placeholder="10" min="0">
+	    	<input type="number" id="replyNumber" data-bind="value:replyNumber" placeholder="10" min="0" value="10">
 		</div>
 
 		<div class="form-group row">
 	  		<label for="assignment-operator" class="col-sm-2 col-form-label">Assignment Operator</label>
-	    	<input type="number" id="replyNumber" data-bind="value:replyNumber" placeholder="5" min="0">
+	    	<input type="number" id="replyNumber" data-bind="value:replyNumber" placeholder="5" min="0" value="5">
 		</div>
 
 		<div class="form-group row">
 	  		<label for="switch" class="col-sm-2 col-form-label">Switch</label>
-	    	<input type="number" id="replyNumber" data-bind="value:replyNumber" placeholder="500" min="0">
+	    	<input type="number" id="replyNumber" data-bind="value:replyNumber" placeholder="500" min="0" value="500">
 		</div>
 
 		<div class="form-group row">
 	  		<label for="case" class="col-sm-2 col-form-label">Case</label>
-	    	<input type="number" id="replyNumber" data-bind="value:replyNumber" placeholder="50" min="0">
+	    	<input type="number" id="replyNumber" data-bind="value:replyNumber" placeholder="50" min="0" value="50">
 		</div>
 
 		<div class="form-group row">
 	  		<label for="while" class="col-sm-2 col-form-label">While</label>
-	    	<input type="number" id="replyNumber" data-bind="value:replyNumber" placeholder="3000" min="0">
+	    	<input type="number" id="replyNumber" data-bind="value:replyNumber" placeholder="3000" min="0" value="3000">
 		</div>
 
 		<div class="form-group row">
 	  		<label for="for" class="col-sm-2 col-form-label">For</label>
-	    	<input type="number" id="replyNumber" data-bind="value:replyNumber" placeholder="5000" min="0">
+	    	<input type="number" id="replyNumber" data-bind="value:replyNumber" placeholder="5000" min="0" value="5000">
 		</div>
 
 		<div class="form-group row">
 	  		<label for="goto" class="col-sm-2 col-form-label">Goto</label>
-	    	<input type="number" id="replyNumber" data-bind="value:replyNumber" placeholder="500" min="0">
+	    	<input type="number" id="replyNumber" data-bind="value:replyNumber" placeholder="100" min="0" value="100">
 		</div>
 
 		<div class="form-group row">
-	  		<label for="if-else" class="col-sm-2 col-form-label">if-else</label>
-	    	<input type="number" id="replyNumber" data-bind="value:replyNumber" placeholder="500" min="0">
+	  		<label for="if-else" class="col-sm-2 col-form-label">if</label>
+	    	<input type="number" id="replyNumber" data-bind="value:replyNumber" placeholder="0" min="0" value="0">
+		</div>
+
+		<div class="form-group row">
+	  		<label for="if-else" class="col-sm-2 col-form-label">else</label>
+	    	<input type="number" id="replyNumber" data-bind="value:replyNumber" placeholder="0" min="0" value="0">
+		</div>
+
+		<div class="form-group row">
+	  		<label for="if-else" class="col-sm-2 col-form-label">elseif</label>
+	    	<input type="number" id="replyNumber" data-bind="value:replyNumber" placeholder="0" min="0" value="0">
+		</div>
+
+		<div class="form-group row">
+	  		<label for="if-else" class="col-sm-2 col-form-label">alphabets</label>
+	    	<input type="number" id="replyNumber" data-bind="value:replyNumber" placeholder="10" min="0" value="10">
+		</div>
+
+		<div class="form-group row">
+	  		<label for="if-else" class="col-sm-2 col-form-label">auto</label>
+	    	<input type="number" id="replyNumber" data-bind="value:replyNumber" placeholder="0" min="0" value="0">
+		</div>
+
+		<div class="form-group row">
+	  		<label for="if-else" class="col-sm-2 col-form-label">break</label>
+	    	<input type="number" id="replyNumber" data-bind="value:replyNumber" placeholder="0" min="0" value="0">
+		</div>
+
+		<div class="form-group row">
+	  		<label for="if-else" class="col-sm-2 col-form-label">char</label>
+	    	<input type="number" id="replyNumber" data-bind="value:replyNumber" placeholder="0" min="0" value="0">
+		</div>
+
+		<div class="form-group row">
+	  		<label for="if-else" class="col-sm-2 col-form-label">const</label>
+	    	<input type="number" id="replyNumber" data-bind="value:replyNumber" placeholder="0" min="0" value="0">
+		</div>
+
+		<div class="form-group row">
+	  		<label for="if-else" class="col-sm-2 col-form-label">continue</label>
+	    	<input type="number" id="replyNumber" data-bind="value:replyNumber" placeholder="0" min="0" value="0">
+		</div>
+
+		<div class="form-group row">
+	  		<label for="if-else" class="col-sm-2 col-form-label">default</label>
+	    	<input type="number" id="replyNumber" data-bind="value:replyNumber" placeholder="0" min="0" value="0">
+		</div>
+
+		<div class="form-group row">
+	  		<label for="if-else" class="col-sm-2 col-form-label">do</label>
+	    	<input type="number" id="replyNumber" data-bind="value:replyNumber" placeholder="0" min="0" value="0">
+		</div>
+
+		<div class="form-group row">
+	  		<label for="if-else" class="col-sm-2 col-form-label">double</label>
+	    	<input type="number" id="replyNumber" data-bind="value:replyNumber" placeholder="0" min="0" value="0">
+		</div>
+
+		<div class="form-group row">
+	  		<label for="if-else" class="col-sm-2 col-form-label">else</label>
+	    	<input type="number" id="replyNumber" data-bind="value:replyNumber" placeholder="0" min="0" value="0">
+		</div>
+
+		<div class="form-group row">
+	  		<label for="if-else" class="col-sm-2 col-form-label">enum</label>
+	    	<input type="number" id="replyNumber" data-bind="value:replyNumber" placeholder="0" min="0" value="0">
+		</div>
+
+		<div class="form-group row">
+	  		<label for="if-else" class="col-sm-2 col-form-label">extern</label>
+	    	<input type="number" id="replyNumber" data-bind="value:replyNumber" placeholder="0" min="0" value="0">
+		</div>
+
+		<div class="form-group row">
+	  		<label for="if-else" class="col-sm-2 col-form-label">float</label>
+	    	<input type="number" id="replyNumber" data-bind="value:replyNumber" placeholder="0" min="0" value="0">
+		</div>
+
+		<div class="form-group row">
+	  		<label for="if-else" class="col-sm-2 col-form-label">int</label>
+	    	<input type="number" id="replyNumber" data-bind="value:replyNumber" placeholder="0" min="0" value="0">
+		</div>
+
+		<div class="form-group row">
+	  		<label for="if-else" class="col-sm-2 col-form-label">long</label>
+	    	<input type="number" id="replyNumber" data-bind="value:replyNumber" placeholder="0" min="0" value="0">
+		</div>
+
+		<div class="form-group row">
+	  		<label for="if-else" class="col-sm-2 col-form-label">register</label>
+	    	<input type="number" id="replyNumber" data-bind="value:replyNumber" placeholder="0" min="0" value="0">
 		</div>
 
 
