@@ -50,7 +50,7 @@ required 'connection.php';
 
 
 <div class="main">
-  <form method="POST" action="addcomp2.php">
+  <form method="POST" action="Dashboard2.php">
 <label>Choose the event name:</label><br><br>
 <div class="form-check">
   <?php
