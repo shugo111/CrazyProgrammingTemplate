@@ -1,18 +1,28 @@
+<?php
+include("connection.php");
+// Session_start(1);
+// $uid=$_SESSION['u_id'];
+?>
+<?php
+$feedback=$_POST['feedback'];
+$sql="INSERT INTO `feedback`(`u_id`, `feedback`) VALUES ('1','$feedback')";
+$results=mysqli_query($db,$sql);
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta http-equiv="x-ua-compatible" content="ie=e  dge">
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/community.css">
-  <link rel="stylesheet" href="/css/dashbord.css">
-  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="community.css">
+  <link rel="stylesheet" href="dashbord.css">
+  <link rel="stylesheet" href="styles.css">
   <title></title>
 </head>
 
@@ -89,50 +99,7 @@
               <h3>Send us your Feedback</h3>
            </div>
             <div class="col-12 col-md-9">
-                <form >
-                  <div class="form-group row">
-                    <label for="firstname" class="col-md-2 col-form-label">First Name</label>
-                    <div class="col-md-10">
-                      <input type="text" class="form-control" name="firstname" id="firstname" placeholder="First Name">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="lastname" class="col-md-2 col-form-label">Last Name</label>
-                    <div class="col-md-10">
-                      <input type="text" class="form-control" name="lastname" id="lastname" placeholder="Last Name">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="telnum" class="col-12 col-md-2 col-form-label">Contact Tel.</label>
-                    <div class="col-5 col-md-3">
-                      <input type="tel" class="form-control" id="areacode" name="areacode" placeholder="Area code">
-                    </div>
-                    <div class="col-7 col-md-7">
-                      <input type="tel" class="form-control" id="telnum" name="telnum" placeholder="Tel. number">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="emailid" class="col-md-2 col-form-label">Email</label>
-                    <div class="col-md-10">
-                      <input type="email" class="form-control" id="emailid" name="emailid" placeholder="Email">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                        <div class="col-md-6 offset-md-2">
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" name="approve" id="approve" value="">
-                                <label class="form-check-label" for="approve">
-                                    <strong>May we contact you?</strong>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-md-3 offset-md-1">
-                            <select class="form-control">
-                                <option>Tel.</option>
-                                <option>Email</option>
-                            </select>
-                        </div>
-                    </div>
+                <form action="" method="post">
                     <div class="form-group row">
                       <label for="feedback" class="col-md-2 col-form-label">Your Feedback</label>
                       <div class="col-md-10">

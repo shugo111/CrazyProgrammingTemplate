@@ -1,4 +1,58 @@
 <!DOCTYPE html>
+<?php
+include("connection.php");
+// $id = $_GET['id'];
+// date_default_timezone_set("India");
+$current_date=date("Y-m-d H:i:s");
+
+
+	$sql = "SELECT * FROM event";
+	$result = mysqli_query($db,$sql);
+	$rowcount=mysqli_num_rows($result);
+$totalrows=mysqli_query($db,$sql);
+
+	$sql5="SELECT * FROM event where defaults=0";
+	$result5=mysqli_query($db,$sql5);
+	$rowcount5=mysqli_num_rows($result5);
+	$diff=$rowcount5-1;
+
+	$sql1 ="SELECT * FROM (SELECT * FROM event where defaults=0 ORDER BY start_date) as newd ORDER BY e_id LIMIT $diff,1";
+	$result1 = mysqli_query($db,$sql1);
+		while($row3 = $result1->fetch_assoc()) {
+		$eid=	$row3['e_id'];
+		echo $eid;
+		}
+		$newiterate=mysqli_query($db,$sql1);
+	$sql2 ="SELECT * from event where e_id not in ($eid) order by defaults";
+	$result2 = mysqli_query($db,$sql2);
+	$rowcount2=mysqli_num_rows($result2);
+$result4 = mysqli_query($db,$sql2);
+// while($row5 = $result1->fetch_assoc()) {
+//
+// 	$date1=date_create($current_date);
+// 	$date2=date_create($row5['end_date']);
+// 	$difference=date_diff($date1,$date2);
+// 	$d=$difference->format('%R%i');
+// 	$x=strpos($d,'-');
+// if($x===0){
+// $sql3 ="UPDATE `event` SET `default`=1 where e_id=$row5[e_id]" ;
+// $result3 = mysqli_query($db,$sql3);
+// }
+// }
+
+	while($row1 = $totalrows->fetch_assoc()) {
+
+		$date1=date_create($current_date);
+		$date2=date_create($row1['end_date']);
+		$difference=date_diff($date1,$date2);
+		$d=$difference->format('%R%i');
+		$x=strpos($d,'-');
+	if($x===0){
+  $sql3 ="UPDATE `event` SET `defaults`=1 where e_id=$row1[e_id]" ;
+	$result3 = mysqli_query($db,$sql3);
+	}
+}
+?>
 <html lang="en" dir="ltr">
 
 <head>
@@ -10,9 +64,9 @@
   <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/community.css">
-  <link rel="stylesheet" href="/css/dashbord.css">
-  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="css/community.css">
+  <link rel="stylesheet" href="css/dashbord.css">
+  <link rel="stylesheet" href="css/styles.css">
   <title></title>
 </head>
 
@@ -28,7 +82,7 @@
           <li class="nav-item "><a class="nav-link" href="#">Leaderboard</a></li>
           <li class="nav-item active"><a class="nav-link" href="#"> Events</a></li>
           <li class="nav-item"><a class="nav-link" href="#"> Rules</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">CLock</a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><?php echo $current_date; ?></a></li>
           <li class="nav-item dropdown nav-element-left"><a class="nav-link drop-down-toggle" href="#" id="navbardrop" data-toggle="dropdown"><span class="fa fa-user"></span> Username</a>
             <div class="dropdown-menu">
               <a class="dropdown-item" href="#">.</a>
@@ -55,39 +109,53 @@
 
   <div  style="background:#F3F7F7">
     <div class="row" id="contain-card">
-      <div class="col-md-6">
-        <div class="card " style="margin:20px 15px 20px 15px">
-          <div class="card-header text-right" style="background:#f9AA33;color:#fff">
-          <b>New</b>
-          </div>
-          <div class="card-body">
-            <h2 class="ui-title text-sec-headline-xs">INTERVIEW PREPARATION</h2>
-            <h3 class="base-card-title" title="Interview Preparation Kit" id="base-card-1" style="color:#000000">Interview Preparation Kit</h3>
+			<?php if ($rowcount==1 or $rowcount>1){ ?>
+				<?php   while($row = $newiterate->fetch_assoc()) {  ?>
+				<div class="col-md-6">
+	        <div class="card " style="margin:20px 15px 20px 15px">
+	          <div class="card-header text-right" style="background:#f9AA33;color:#fff">
+	          <b>New</b>
+	          </div>
+	          <div class="card-body">
 
-            <div class="progress" style="height:5px">
-              <div class="progress-bar" role="progressbar" style="width: 4%;height:5px;background:#000000" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
+	            <h3 class="base-card-title" title="Interview Preparation Kit" id="base-card-1" style="color:#000000"><?php echo $row['ename']; ?></h3>
 
-            <h2 class="ui-title text-sec-headline-xs" style="padding:25px 5px 20px 5px"><b style="color:#000000">4%</b>(3/69 challenges solved)</h2>
-             <div class="row">
-              <div class="col-sm-6">
-                <a href="/practice.html" class="btn btn-primary btn-block border-0" style="background:#f9AA33"><b>Continue Practice</b></a>
-               </div>
-            </div>
-          </div>
-          <div class="card-footer text-muted text-center">
-            2 days ago
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
+	            <div class="progress" style="height:5px">
+	              <div class="progress-bar" role="progressbar" style="width: 4%;height:5px;background:#000000" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+	            </div>
+
+	            <h2 class="ui-title text-sec-headline-xs" style="padding:25px 5px 20px 5px"><b style="color:#000000">4%</b>(3/69 challenges solved)</h2>
+	             <div class="row">
+	              <div class="col-sm-6">
+	                <a href="/practice.html" class="btn btn-primary btn-block border-0" style="background:#f9AA33"><b>Continue Practice</b></a>
+	               </div>
+	            </div>
+	          </div>
+	          <div class="card-footer text-muted text-center">
+	            2 days ago
+	          </div>
+	        </div>
+	      </div>
+			<?php } }
+			if($rowcount>1){
+
+				while($row2 = $result4->fetch_assoc()) {
+					$date11=date_create($current_date);
+					$date12=date_create($row2['end_date']);
+					$date13=date_create($row2['start_date']);
+					$differences=date_diff($date11,$date12);
+					$differencess=date_diff($date11,$date13);
+					$di=$differences->format('%a');
+					$d1=$differencess->format('%a');
+				if($row2['defaults']==0){ ?>
+		<div class="col-md-6">
         <div class="card " style="margin:20px 15px 20px 15px">
           <div class="card-header text-right" style="background:#FFAB91;color:#232F34">
           <b>Featured</b>
           </div>
           <div class="card-body">
-            <h2 class="ui-title text-sec-headline-xs">INTERVIEW PREPARATION</h2>
-            <h3 class="base-card-title" title="Interview Preparation Kit" id="base-card-1" style="color:#000000">Interview Preparation Kit</h3>
+
+            <h3 class="base-card-title" title="Interview Preparation Kit" id="base-card-1" style="color:#000000"><?php echo $row2['ename']; ?></h3>
 
             <div class="progress" style="height:5px">
               <div class="progress-bar" role="progressbar" style="width: 4%;height:5px;background:#000000" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
@@ -101,20 +169,19 @@
             </div>
           </div>
           <div class="card-footer text-muted text-center">
-            2 days ago
+            <?php echo $d1 ?> days ago
           </div>
         </div>
       </div>
-    </div>
-    <div class="row" id="contain-cards">
+		<?php }elseif($row2['defaults']==1){ ?>
       <div class="col-md-6">
         <div class="card " style="margin:20px 15px 20px 15px">
           <div class="card-header text-right" style="background:#F3F7F7;color:#232F34">
           <b>Disabled</b>
           </div>
           <div class="card-body">
-            <h2 class="ui-title text-sec-headline-xs">INTERVIEW PREPARATION</h2>
-            <h3 class="base-card-title" title="Interview Preparation Kit" id="base-card-1" style="color:#000000">Interview Preparation Kit</h3>
+            <!-- <h2 class="ui-title text-sec-headline-xs">INTERVIEW PREPARATION</h2> -->
+            <h3 class="base-card-title" title="Interview Preparation Kit" id="base-card-1" style="color:#000000"><?php echo $row2['ename']; ?></h3>
 
             <div class="progress" style="height:5px">
               <div class="progress-bar" role="progressbar" style="width: 4%;height:5px;background:#000000" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
@@ -128,12 +195,14 @@
             </div>
           </div>
           <div class="card-footer text-muted text-center">
-            2 days ago
+              <?php echo $di ?> days ago
           </div>
         </div>
       </div>
+			<?php }}} ?>
     </div>
-  </div
+  </div>
+
 
 
   <footer class="footer">
