@@ -1,4 +1,3 @@
-
 <?php
 required 'connection.php';
 ?>
