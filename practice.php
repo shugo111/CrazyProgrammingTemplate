@@ -1,4 +1,24 @@
 <!DOCTYPE html>
+<?php
+include("connection.php");
+// $id = $_GET['id'];
+
+// date_default_timezone_set("India");
+$current_date=date("Y-m-d H:i:s");
+
+
+	$sql = "SELECT * FROM problem where e_id='2'";
+	$result = mysqli_query($db,$sql);
+	$rowcount=mysqli_num_rows($result);
+	echo $rowcount;
+	$sql1 ="SELECT * FROM problem where e_id='2' ORDER BY p_id LIMIT 0,1";
+	$result1 = mysqli_query($db,$sql1);
+	$sql2 ="SELECT * FROM problem where e_id='2' ORDER BY p_id LIMIT 1,$rowcount";
+	$result2 = mysqli_query($db,$sql2);
+
+
+
+?>
 <html lang="en" dir="ltr">
 
 <head>
@@ -10,9 +30,9 @@
   <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/community.css">
-  <link rel="stylesheet" href="/css/dashbord.css">
-  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="css/community.css">
+  <link rel="stylesheet" href="css/dashbord.css">
+  <link rel="stylesheet" href="css/styles.css">
   <title></title>
 </head>
 
@@ -55,78 +75,57 @@
 
   <div  style="background:#F3F7F7">
     <div class="row" id="contain-card">
+			<?php   while($row = $result1->fetch_assoc()) {  ?>
       <div class="col-md-4">
-        <div class="card " style="margin:0px 15px 0px 15px">
+        <div class="card " style="margin:15px">
           <div class="card-body">
-            <h2 class="ui-title text-sec-headline-xs">INTERVIEW PREPARATION</h2>
+            <h2 class="ui-title text-sec-headline-xs"><?php echo $row['pname'] ?></h2>
             <h3 class="base-card-title" title="Interview Preparation Kit" id="base-card-1" style="color:#000000">Interview Preparation Kit</h3>
-
-            <div class="progress" style="height:5px">
-              <div class="progress-bar" role="progressbar" style="width: 4%;height:5px;background:#000000" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-
-            <h2 class="ui-title text-sec-headline-xs" style="padding:25px 5px 20px 5px"><b style="color:#000000">4%</b>(3/69 challenges solved)</h2>
              <div class="row">
               <div class="col-sm-6">
-                <a href="/question.html" class="btn btn-primary btn-block border-0" style="background:#f9AA33"><b>Continue Practice</b></a>
+                <a href="/question.html" class="btn btn-primary btn-block border-0" style="background:#f9AA33;font-size:12px"><b>Continue Practice</b></a>
                </div>
             </div>
           </div>
         </div>
       </div>
+		<?php } ?>
+		<?php  if($rowcount>1){
+		 while($row1 = $result2->fetch_assoc()) {  ?>
       <div class="col-md-4">
-        <div class="card " style="margin:0px 15px 0px 15px">
+        <div class="card " style="margin:15px">
           <div class="card-body">
-            <h2 class="ui-title text-sec-headline-xs">INTERVIEW PREPARATION</h2>
+            <h2 class="ui-title text-sec-headline-xs"><?php echo $row1['pname'] ?></h2>
             <h3 class="base-card-title" title="Interview Preparation Kit" id="base-card-1" style="color:#000000">Interview Preparation Kit</h3>
-
-            <div class="progress" style="height:5px">
-              <div class="progress-bar" role="progressbar" style="width: 4%;height:5px;background:#000000" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-
-            <h2 class="ui-title text-sec-headline-xs" style="padding:25px 5px 20px 5px"><b style="color:#000000">4%</b>(3/69 challenges solved)</h2>
              <div class="row">
               <div class="col-sm-6">
-                <a href="#" class="btn btn-block " style="border-color:#f9AA33;color:#f9AA33"><b>Continue Practice</b></a>
+                <a href="#" class="btn btn-block " style="border-color:#f9AA33;color:#f9AA33;font-size:12px"><b>Continue Practice</b></a>
 
                </div>
             </div>
           </div>
         </div>
       </div>
+		<?php } }?>
       <div class="col-md-4">
-        <div class="card " style="margin:margin:0px 15px 0px 15px">
+        <div class="card " style="margin:15px">
           <div class="card-body">
             <h2 class="ui-title text-sec-headline-xs">INTERVIEW PREPARATION</h2>
             <h3 class="base-card-title" title="Interview Preparation Kit" id="base-card-1" style="color:#000000">Interview Preparation Kit</h3>
-
-            <div class="progress" style="height:5px">
-              <div class="progress-bar" role="progressbar" style="width: 4%;height:5px;background:#000000" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-
-            <h2 class="ui-title text-sec-headline-xs" style="padding:25px 5px 20px 5px"><b style="color:#000000">4%</b>(3/69 challenges solved)</h2>
              <div class="row">
               <div class="col-sm-6">
-                <a href="#" class="btn btn-block " style="border-color:#f9AA33;color:#f9AA33"><b>Continue Practice</b></a>
+                <a href="#" class="btn btn-block " style="border-color:#f9AA33;color:#f9AA33;font-size:12px"><b>Continue Practice</b></a>
                </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div  style="background:#F3F7F7">
-      <div class="row" id="contain-card">
+
         <div class="col-md-4">
-          <div class="card " style="margin:0px 15px 0px 15px">
+          <div class="card " style="margin:15px">
             <div class="card-body">
               <h2 class="ui-title text-sec-headline-xs">INTERVIEW PREPARATION</h2>
               <h3 class="base-card-title" title="Interview Preparation Kit" id="base-card-1" style="color:#000000">Interview Preparation Kit</h3>
-
-              <div class="progress" style="height:5px">
-                <div class="progress-bar" role="progressbar" style="width: 4%;height:5px;background:#000000" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-
-              <h2 class="ui-title text-sec-headline-xs" style="padding:25px 5px 20px 5px"><b style="color:#000000">4%</b>(3/69 challenges solved)</h2>
                <div class="row">
                 <div class="col-sm-6">
                   <a href="#" class="btn btn-block " style="border-color:#f9AA33;color:#f9AA33"><b>Continue Practice</b></a>
@@ -136,16 +135,10 @@
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card " style="margin:0px 15px 0px 15px">
+          <div class="card " style="margin:15px">
             <div class="card-body">
               <h2 class="ui-title text-sec-headline-xs">INTERVIEW PREPARATION</h2>
               <h3 class="base-card-title" title="Interview Preparation Kit" id="base-card-1" style="color:#000000">Interview Preparation Kit</h3>
-
-              <div class="progress" style="height:5px">
-                <div class="progress-bar" role="progressbar" style="width: 4%;height:5px;background:#000000" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-
-              <h2 class="ui-title text-sec-headline-xs" style="padding:25px 5px 20px 5px"><b style="color:#000000">4%</b>(3/69 challenges solved)</h2>
                <div class="row">
                 <div class="col-sm-6">
                   <a href="#" class="btn btn-block " style="border-color:#f9AA33;color:#f9AA33"><b>Continue Practice</b></a>
@@ -156,16 +149,10 @@
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card " style="margin:margin:0px 15px 0px 15px">
+          <div class="card " style="margin:15px">
             <div class="card-body">
               <h2 class="ui-title text-sec-headline-xs">INTERVIEW PREPARATION</h2>
               <h3 class="base-card-title" title="Interview Preparation Kit" id="base-card-1" style="color:#000000">Interview Preparation Kit</h3>
-
-              <div class="progress" style="height:5px">
-                <div class="progress-bar" role="progressbar" style="width: 4%;height:5px;background:#000000" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-
-              <h2 class="ui-title text-sec-headline-xs" style="padding:25px 5px 20px 5px"><b style="color:#000000">4%</b>(3/69 challenges solved)</h2>
                <div class="row">
                 <div class="col-sm-6">
                   <a href="#" class="btn btn-block " style="border-color:#f9AA33;color:#f9AA33"><b>Continue Practice</b></a>
