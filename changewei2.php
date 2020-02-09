@@ -1,12 +1,5 @@
 <?php
-$conn = mysqli_connect('localhost', 'root', '');
-if (!$conn){
-    die("Database Connection Failed" . mysqli_error($conn));
-}
-$select_db = mysqli_select_db($conn, 'crazepgm');
-if (!$select_db){
-    die("Database Selection Failed" . mysqli_error($conn));
-}
+required 'connection.php';
 session_start();
 $_SESSION['ename']= $_POST['events']; 
 ?>
@@ -36,7 +29,7 @@ $_SESSION['ename']= $_POST['events'];
       </button>
       <a class="navbar-brand" href="#" style="color:#ffa852">Crazy Programming <br><h3 >Admin</h3> </a>
       <li>
-        <a onClick="logout()" id="log" href="Login.html" class="navbar-brand pull-right" style="color:#F0F0F0"  >Logout</a>
+        <a onClick="logout()" id="log" href="Login.php" class="navbar-brand pull-right" style="color:#F0F0F0"  >Logout</a>
     </li>
     </div>
   </nav>  
