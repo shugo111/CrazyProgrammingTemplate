@@ -1,5 +1,12 @@
 <?php
-required 'connection.php';
+$conn = mysqli_connect('localhost', 'root', '');
+if (!$conn){
+    die("Database Connection Failed" . mysqli_error($conn));
+}
+$select_db = mysqli_select_db($conn, 'crazepgm');
+if (!$select_db){
+    die("Database Selection Failed" . mysqli_error($conn));
+}
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -18,7 +25,7 @@ required 'connection.php';
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="Dashboard.css"><div id="formFooter">
   
-  <title></title>
+  <title>Leaderboard</title>
 </head>
 
 
@@ -41,11 +48,12 @@ required 'connection.php';
 
   <div class="sidenav">
     <br><br>
-  <a href="Dashboard.html" id="hell" active>Leaderboard</a><br>
-  <a href="Event.html">Upcoming events</a><br>
-  <a href="Addcomp.html">Add Competition</a><br>
-  <a href="weitage.html">Change weightage</a><br>
-  <a href="Wei.html">Current weightage</a><br>
+  <a href="Dashboard.php" id="hell" active>Leaderboard</a><br>
+  <a href="event.php">Events</a><br>
+  <a href="addcomp.php">Add Competition</a><br>
+  <a href="changewei.php">Change weightage</a><br>
+  <a href="checkwei.php">Current weightage</a><br>
+  <a href="feedback.php">Feedback</a><br>
 </div>
 
 
@@ -54,7 +62,7 @@ required 'connection.php';
 <label>Choose the event name:</label><br><br>
 <div class="form-check">
   <?php
-  $sel="SELECT ename from event";
+  $sel="SELECT ename from event";    //quesry to reterive event names to be display
   $res=mysqli_query($conn,$sel) or die(mysqli_error($result));
   $r=mysqli_num_rows($res);
                   if ($r > 0) {
@@ -93,7 +101,7 @@ $eventname=$_POST['radio'];
                 </thead>
                 <tbody>
                    <?php
-                  $sql="SELECT u.name, s.escores from user u , scores s , event e where s.u_id=u.u_id and e.e_id=s.e_id and e.ename='$eventname' order by(escores) desc";
+                  $sql="SELECT u.name, s.escores from user u , scores s , event e where s.u_id=u.u_id and e.e_id=s.e_id and e.ename='$eventname' order by(escores) desc"; //query to reterive user names and their scores to display
                   $result=mysqli_query($conn,$sql) or die(mysqli_error($conn));
 
                   $r=mysqli_num_rows($result);
@@ -104,7 +112,7 @@ $eventname=$_POST['radio'];
                   echo "<tr><td>" . $i. "</td><td>" . $row["name"] . "</td><td>" . $row["escores"]. "</td></tr>";
                   $i=$i+1;
                 }
-                  } else { echo "0 results";} } 
+                  } else { echo "0 results";}  }
                   ?>
 
                 </tbody>
