@@ -17,7 +17,7 @@
 	<div>
 	<div class="form-container sign-up-container">
 		<form action=signupp.php method="POST"> <!-- sign up -->
-			<h1>Create Account</h1>
+			<h2>Create Account</h2>
 			<div class="social-container">
                             <span>Enter the email that you want to register</span>
 			</div>
@@ -38,7 +38,7 @@
 			</div>
 	<div class="form-container sign-in-container"> <!-- sign in -->
 		<form action=signinp.php method="POST">
-			<h1>Sign in</h1>
+			<h2>Sign in</h2>
 			<div class="social-container">
 			<span>Enter the registered email ID</span>
 			</div>
@@ -56,12 +56,12 @@
 	<div class="overlay-container">
 		<div class="overlay">
 			<div class="overlay-panel overlay-left">
-				<h1>Welcome Back!</h1>
+				<h2>Welcome Back!</h2>
 				<p>To continue coding, please login here!</p>
 				<button class="ghost" id="signIn">Sign In</button>
 			</div>
 			<div class="overlay-panel overlay-right">
-				<h1>Click here to be part of our Crazy Community!</h1>
+				<h2>Click here to be part of our Crazy Community!</h2>
 				<p>Enter your personal details and start your journey with us</p>
 				<button class="ghost" id="signUp">Sign Up</button>
 			</div>
