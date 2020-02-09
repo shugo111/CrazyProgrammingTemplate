@@ -1,5 +1,5 @@
 <?php
-required 'connection.php';
+require 'connection.php';
 session_start();
 $_SESSION['ename']= $_POST['events']; 
 ?>
