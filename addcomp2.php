@@ -1,5 +1,5 @@
 <?php
-required 'connecyion.php';
+required 'connection.php';
 session_start();
 ?>
 <!DOCTYPE html>
