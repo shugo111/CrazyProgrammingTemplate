@@ -1,22 +1,20 @@
 <?php
-$conn = mysqli_connect('localhost', 'root', '');
-if (!$conn){
-    die("Database Connection Failed" . mysqli_error($conn));
-}
-$select_db = mysqli_select_db($conn, 'crazepgm');
-if (!$select_db){
-    die("Database Selection Failed" . mysqli_error($conn));
-}
+required 'connection.php';
 session_start();
 
 
 $e_id= $_SESSION['e_id'];
 $p_id= $_SESSION['p_id'];
 
-$input=$_POST['input'];  //value from form
+$nf=$_SESSION['nf'];
+$stmt = $conn->prepare("INSERT into `testcase` (`e_id`,`p_id`,`input`) values('$e_id','$p_id',?)");
+$stmt->bind_param("s", $input);
+while($nf>0){
+  $input=$_POST[$nf];
+  $stmt->execute();
+  $nf=$nf-1;
+}
 
-$sql="INSERT into `testcase` (`e_id`,`p_id`,`input`) values('$e_id','$p_id','$input')";  //insert into database
-$result=mysqli_query($conn,$sql) or die(mysqli_error($conn));
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -44,7 +42,7 @@ $result=mysqli_query($conn,$sql) or die(mysqli_error($conn));
       </button>
       <a class="navbar-brand" href="#" style="color:#ffa852">Crazy Programming <br><h3 >Admin</h3> </a>
       <li>
-        <a onClick="logout()" id="log" href="Login.html" class="navbar-brand pull-right" style="color:#F0F0F0"  >Logout</a>
+        <a onClick="logout()" id="log" href="Login.php" class="navbar-brand pull-right" style="color:#F0F0F0"  >Logout</a>
     </li>
     </div>
   </nav>  
@@ -73,9 +71,6 @@ $result=mysqli_query($conn,$sql) or die(mysqli_error($conn));
 
 		<h5>Test case added successfully!!!</h5>
 
-<button type="submit" class="btn btn-primary" formaction="addcomp7.html">Add another test case</button>
-
-            <br>
             <br>
             <button type="submit" class="btn btn-primary" formaction="addcomp8.html">Add another question</button>
 
