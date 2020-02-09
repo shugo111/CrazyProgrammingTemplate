@@ -38,7 +38,28 @@ function ajax_post(){
     var url = "subcode.php";
     var code = document.getElementById("text").value;
     var ip = document.getElementById("textfield2").value;
-    var vars = "text="+encodeURIComponent(code)+"&textfield2="+ip;
+	var cbox=document.getElementById("cbox").value;
+    var vars = "text="+encodeURIComponent(code)+"&textfield2="+ip+"&cbox="+cbox;
+    hr.open("POST", url, true);
+    hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    hr.onreadystatechange = function() {
+	    if(hr.readyState == 4 && hr.status == 200) {
+		    var return_data = hr.responseText;
+			document.getElementById("divi").innerHTML ="Output: "+return_data;
+	    }
+    }
+    hr.send(vars); // Actually execute the request
+    document.getElementById("divi").innerHTML = "Output: processing...";
+}
+</script>
+<script>
+function ajax_run(){
+    var hr = new XMLHttpRequest();
+    var url = "runcode.php";
+    var code = document.getElementById("text").value;
+    var ip = document.getElementById("textfield2").value;
+	var cbox=document.getElementById("cbox").value;
+    var vars = "text="+encodeURIComponent(code)+"&textfield2="+ip+"&cbox="+cbox;
     hr.open("POST", url, true);
     hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     hr.onreadystatechange = function() {
@@ -135,11 +156,12 @@ function ajax_post(){
 	 </div>
 <!-- do not open a form -->
 <input type="hidden" name="text" id="text"><br>
-<input name="checkbox" type="checkbox" id="checkbox" onchange="toggleTextArea();" value="0"> Click here to provide custom input
+<input type="hidden" name="cbox" id="cbox" value="0">
+<input type="checkbox" name="checkbox" id="checkbox" onchange="toggleTextArea();" value="0"> Click here to provide custom input
 <textarea style="display: none;" class="form-control" name="textfield2" rows="8" cols="100" id="textfield2"></textarea>
 <br><br>
-<input type="button" name="run" value="Run" onClick="store();">
-<input type="submit" id="st" value="Submit" onClick="store();ajax_post();">
+<input type="button" name="run" value="Run" onClick="store();ajax_run();">
+<input type="submit" name="submit" id="st" value="Submit" onClick="store();ajax_post();">
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.7/ace.js" type="text/javascript" charset="utf-8"></script>
@@ -158,15 +180,16 @@ function toggleTextArea() {
 	var theTextArea = textfield2;
 	if(theCheck.checked == true) {
 		theTextArea.style.display = "block";
-		theCheck.value=1;
+		document.getElementById('cbox').value='1';
 	} else {
 		theTextArea.style.display = "none";
 		theCheck.value=0;
+		document.getElementById('cbox').value='0';
 	}
 }
       </script>
-	  <br />
-<span id="divi" class="divi"></span>
+	  <br /><br />
+<span id="divi" class="divi"></span> <!--make a box or whatever(css) -->
     </div>
 	</div>
   <footer class="footer">
