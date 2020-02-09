@@ -10,7 +10,7 @@
 />
 
 <link rel="stylesheet" href="css/Login&Registration.css" />
-<title>Slider form</title>
+<title>Analytics Genix</title>
 </head>
 <body>
 	<div class="container" id="container">
