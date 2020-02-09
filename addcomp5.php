@@ -1,13 +1,7 @@
 <?php
-$conn = mysqli_connect('localhost', 'root', '');
-if (!$conn){
-    die("Database Connection Failed" . mysqli_error($conn));
-}
-$select_db = mysqli_select_db($conn, 'crazepgm');
-if (!$select_db){
-    die("Database Selection Failed" . mysqli_error($conn));
-}
+required 'connection.php';
 session_start();
+
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -34,7 +28,7 @@ session_start();
       </button>
       <a class="navbar-brand" href="#" style="color:#ffa852">Crazy Programming <br><h3 >Admin</h3> </a>
       <li>
-        <a onClick="logout()" id="log" href="Login.html" class="navbar-brand pull-right" style="color:#F0F0F0"  >Logout</a>
+        <a onClick="logout()" id="log" href="Login.php" class="navbar-brand pull-right" style="color:#F0F0F0"  >Logout</a>
     </li>
     </div>
   </nav>  
@@ -58,6 +52,9 @@ session_start();
   $constraints = $_POST['constraints'];
   $description=$_POST['description'];
   $samplepgm=$_POST['samplepgm'];
+  $nf=$_POST['nt'];
+  $_SESSION['nf']=$nf;
+
 
   $sql="INSERT into problem(pname,description,constraints,sample_input,sample_output,sample_pgm,e_id) values ('$pname','$description','$constraints','$sample_input','$sample_output','$samplepgm','$e_id')";  //insert values into database
   $result=mysqli_query($conn,$sql) or die(mysqli_error($result));
@@ -76,21 +73,24 @@ session_start();
           </div>
           <form method="POST" action="addcomp6.php">
           <div class="card-body">
+                       
             <h4 class="ui-title text-sec-headline-xs">Add test cases:</h4>
             <br><br>
-            
+             <?php
+            while($nf>0){ ?>
 
             <h7>Add test case inputs:</h7><br>
+
             <div class="form-group">
-              <textarea id="text-arr" class="form-control rounded-0" id="exampleFormControlTextarea1" rows="5" name="input" required>
+              <textarea id="text-arr" class="form-control rounded-0" id="exampleFormControlTextarea1" rows="5" name=<?php echo $nf ?> required>
               Test case inputs
             
             </textarea>
-            </div>
+            </div> <br>
+            <?php $nf=$nf-1;
+          }
+            ?>
             <br>
-
-            
-            
             <br>
             <br>
             <button type="submit" class="btn btn-primary" formaction="addcomp6.php">Add test case</button>
