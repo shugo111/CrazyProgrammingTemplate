@@ -1,5 +1,5 @@
 <?php
-required 'connection.php';
+require 'connection.php';
 session_start();
 $_SESSION['default']=0;
 ?>
